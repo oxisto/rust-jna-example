@@ -2,6 +2,7 @@ package rustjna;
 
 import com.sun.jna.Library;
 import com.sun.jna.Native;
+import com.sun.jna.PointerType;
 
 
 public class Treble {
@@ -12,6 +13,11 @@ public class Treble {
     }
 
     public static void main(String[] args) {
-        System.out.println("trebling: 10 " + CTreble.INSTANCE.treble(10).field);
+        MyStruct s = CTreble.INSTANCE.treble(20);
+        try {
+            System.out.println("trebling: 20 " + s.getField());
+        } finally {
+            // nothing
+        }
     }
 }

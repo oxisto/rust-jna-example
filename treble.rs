@@ -1,10 +1,4 @@
-#![crate_type = "dylib"]
+// This repository now builds the native library as a Rust cdylib in a Cargo project.
+// See `Cargo.toml` and `src/lib.rs`.
 
-pub struct MyStruct {
-    pub field: i32,
-}
-
-#[no_mangle]
-pub extern "C" fn treble(value: i32) -> MyStruct {
-    return MyStruct { field: value * 3 };
-}
+// Old contents replaced.
