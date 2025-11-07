@@ -1,6 +1,10 @@
 #![crate_type = "dylib"]
 
+pub struct MyStruct {
+    pub field: i32,
+}
+
 #[no_mangle]
-pub extern fn treble(value: i32) -> i32 {
-    value * 3
+pub extern "C" fn treble(value: i32) -> MyStruct {
+    return MyStruct { field: value * 3 };
 }
